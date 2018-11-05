@@ -1,0 +1,11 @@
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\bin\Debug\PostgreSQL.exe.config
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\bin\Debug\PostgreSQL.exe
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\bin\Debug\PostgreSQL.pdb
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\obj\Debug\PostgreSQL.csprojResolveAssemblyReference.cache
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\obj\Debug\PgSql.Form1.resources
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\obj\Debug\PostgreSQL.Properties.Resources.resources
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\obj\Debug\PostgreSQL.csproj.GenerateResource.Cache
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\obj\Debug\PostgreSQL.csproj.CoreCompileInputs.cache
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\obj\Debug\PostgreSQL.exe
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\obj\Debug\PostgreSQL.pdb
+D:\C#\PostgreSql_and_Csharp\PostgreSQL\obj\Debug\PostgreSQL.Form2.resources
