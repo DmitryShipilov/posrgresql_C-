@@ -410,7 +410,10 @@ namespace PgSql
                         }
                         else
                         {
-                            query = string.Format("insert into {0} (f_val) values ('{1}')", table_name, dataGridView1.CurrentCell.Value.ToString());
+                            query = string.Format("insert into {0} (f_val) values ('{1}'); " +
+                                                  "update main set {0} = ({2})  where u_id = {3} ",
+                                                  table_name, dataGridView1.CurrentCell.Value.ToString().Replace(" ", ""), "select max(f_id) from " + table_name ,id);
+
                             MessageBox.Show("User added");
                         }
 
