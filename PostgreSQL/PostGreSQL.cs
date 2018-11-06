@@ -24,9 +24,8 @@ namespace PgSql
       {
       }
 
-      public void PostgreSQL_insert_into_table(string name_table, string text)
+      public void PostgreSQL_insert_into_table(string name_table, string text) // add into parent table 
       {
-            Console.WriteLine(text);
             try
             {
                 bool exist = false;
@@ -68,7 +67,7 @@ namespace PgSql
          }
       }
 
-      public void PostgreSQL_insert_into_table(string name, string field, string text)
+      public void PostgreSQL_insert_into_table(string name, string field, string text) // add into main table telephone column
         {
             try
             {
@@ -89,7 +88,7 @@ namespace PgSql
         }
 
 
-        public void PostgreSQL_insert_main(string name, string surname, string patr, string street)
+        public void PostgreSQL_insert_main(string name, string surname, string patr, string street) // insert into main table all params
         {
             try
             {

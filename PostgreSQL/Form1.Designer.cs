@@ -58,6 +58,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.Filter = new System.Windows.Forms.Button();
             this.updateMain = new System.Windows.Forms.Button();
+            this.comboBoxPredictSurname = new System.Windows.Forms.ComboBox();
+            this.comboBoxPredictStreet = new System.Windows.Forms.ComboBox();
+            this.comboBoxPredictPatron = new System.Windows.Forms.ComboBox();
+            this.comboBoxPredictName = new System.Windows.Forms.ComboBox();
+            this.pasteValues = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,16 +84,15 @@
             this.label1.Size = new System.Drawing.Size(89, 22);
             this.label1.TabIndex = 3;
             this.label1.Text = "Last name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // add
             // 
-            this.add.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.add.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.add.Cursor = System.Windows.Forms.Cursors.Default;
             this.add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.add.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.add.Location = new System.Drawing.Point(1076, 65);
+            this.add.Location = new System.Drawing.Point(1117, 66);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(132, 35);
             this.add.TabIndex = 6;
@@ -98,12 +102,12 @@
             // 
             // delete
             // 
-            this.delete.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.delete.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.delete.Cursor = System.Windows.Forms.Cursors.Default;
             this.delete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.delete.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.delete.Location = new System.Drawing.Point(1076, 125);
+            this.delete.Location = new System.Drawing.Point(1117, 126);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(132, 35);
             this.delete.TabIndex = 7;
@@ -113,12 +117,12 @@
             // 
             // clear
             // 
-            this.clear.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.clear.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.clear.Cursor = System.Windows.Forms.Cursors.Default;
             this.clear.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.clear.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.clear.Location = new System.Drawing.Point(1076, 237);
+            this.clear.Location = new System.Drawing.Point(1117, 238);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(132, 35);
             this.clear.TabIndex = 8;
@@ -128,11 +132,11 @@
             // 
             // exit
             // 
-            this.exit.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.exit.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.exit.Cursor = System.Windows.Forms.Cursors.Cross;
             this.exit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.exit.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.exit.Location = new System.Drawing.Point(1076, 627);
+            this.exit.Location = new System.Drawing.Point(1117, 628);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(132, 35);
             this.exit.TabIndex = 9;
@@ -219,12 +223,12 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Cursor = System.Windows.Forms.Cursors.Default;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button1.Location = new System.Drawing.Point(1076, 313);
+            this.button1.Location = new System.Drawing.Point(1117, 314);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 58);
             this.button1.TabIndex = 19;
@@ -234,33 +238,30 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trajan Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 237);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 297);
             this.dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(789, 391);
+            this.dataGridView1.Size = new System.Drawing.Size(845, 391);
             this.dataGridView1.TabIndex = 21;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.button2.Location = new System.Drawing.Point(1076, 390);
+            this.button2.Location = new System.Drawing.Point(1117, 391);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 35);
             this.button2.TabIndex = 22;
             this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // comboBoxTable
@@ -273,7 +274,7 @@
             "patronymic",
             "street",
             "telephone"});
-            this.comboBoxTable.Location = new System.Drawing.Point(846, 390);
+            this.comboBoxTable.Location = new System.Drawing.Point(916, 390);
             this.comboBoxTable.Name = "comboBoxTable";
             this.comboBoxTable.Size = new System.Drawing.Size(175, 30);
             this.comboBoxTable.TabIndex = 23;
@@ -283,7 +284,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(831, 366);
+            this.label6.Location = new System.Drawing.Point(901, 366);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(212, 22);
             this.label6.TabIndex = 24;
@@ -293,16 +294,17 @@
             // 
             this.comboBoxFilterStreet.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBoxFilterStreet.FormattingEnabled = true;
-            this.comboBoxFilterStreet.Location = new System.Drawing.Point(612, 156);
+            this.comboBoxFilterStreet.Location = new System.Drawing.Point(612, 216);
             this.comboBoxFilterStreet.Name = "comboBoxFilterStreet";
             this.comboBoxFilterStreet.Size = new System.Drawing.Size(174, 30);
             this.comboBoxFilterStreet.TabIndex = 25;
+            this.comboBoxFilterStreet.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterStreet_SelectedIndexChanged);
             // 
             // comboBoxFilterPatr
             // 
             this.comboBoxFilterPatr.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBoxFilterPatr.FormattingEnabled = true;
-            this.comboBoxFilterPatr.Location = new System.Drawing.Point(424, 156);
+            this.comboBoxFilterPatr.Location = new System.Drawing.Point(424, 216);
             this.comboBoxFilterPatr.Name = "comboBoxFilterPatr";
             this.comboBoxFilterPatr.Size = new System.Drawing.Size(174, 30);
             this.comboBoxFilterPatr.TabIndex = 26;
@@ -311,7 +313,7 @@
             // 
             this.comboBoxFilterName.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBoxFilterName.FormattingEnabled = true;
-            this.comboBoxFilterName.Location = new System.Drawing.Point(224, 156);
+            this.comboBoxFilterName.Location = new System.Drawing.Point(224, 216);
             this.comboBoxFilterName.Name = "comboBoxFilterName";
             this.comboBoxFilterName.Size = new System.Drawing.Size(174, 30);
             this.comboBoxFilterName.TabIndex = 27;
@@ -320,7 +322,7 @@
             // 
             this.comboBoxFilterSurname.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.comboBoxFilterSurname.FormattingEnabled = true;
-            this.comboBoxFilterSurname.Location = new System.Drawing.Point(12, 156);
+            this.comboBoxFilterSurname.Location = new System.Drawing.Point(12, 216);
             this.comboBoxFilterSurname.Name = "comboBoxFilterSurname";
             this.comboBoxFilterSurname.Size = new System.Drawing.Size(174, 30);
             this.comboBoxFilterSurname.TabIndex = 28;
@@ -329,7 +331,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label7.Location = new System.Drawing.Point(12, 125);
+            this.label7.Location = new System.Drawing.Point(12, 185);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(148, 22);
             this.label7.TabIndex = 29;
@@ -339,7 +341,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label8.Location = new System.Drawing.Point(219, 125);
+            this.label8.Location = new System.Drawing.Point(219, 185);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 22);
             this.label8.TabIndex = 30;
@@ -349,7 +351,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label9.Location = new System.Drawing.Point(421, 125);
+            this.label9.Location = new System.Drawing.Point(421, 185);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(171, 22);
             this.label9.TabIndex = 31;
@@ -359,7 +361,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.label10.Location = new System.Drawing.Point(608, 125);
+            this.label10.Location = new System.Drawing.Point(608, 185);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(126, 22);
             this.label10.TabIndex = 32;
@@ -367,19 +369,21 @@
             // 
             // Filter
             // 
+            this.Filter.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Filter.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Filter.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.Filter.Location = new System.Drawing.Point(821, 151);
+            this.Filter.Location = new System.Drawing.Point(821, 211);
             this.Filter.Name = "Filter";
             this.Filter.Size = new System.Drawing.Size(132, 35);
             this.Filter.TabIndex = 33;
             this.Filter.Text = "Filter ";
-            this.Filter.UseVisualStyleBackColor = true;
+            this.Filter.UseVisualStyleBackColor = false;
             this.Filter.Click += new System.EventHandler(this.Filter_Click);
             // 
             // updateMain
             // 
             this.updateMain.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.updateMain.Location = new System.Drawing.Point(821, 628);
+            this.updateMain.Location = new System.Drawing.Point(916, 628);
             this.updateMain.Name = "updateMain";
             this.updateMain.Size = new System.Drawing.Size(132, 35);
             this.updateMain.TabIndex = 34;
@@ -387,12 +391,64 @@
             this.updateMain.UseVisualStyleBackColor = true;
             this.updateMain.Click += new System.EventHandler(this.button3_Click);
             // 
+            // comboBoxPredictSurname
+            // 
+            this.comboBoxPredictSurname.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBoxPredictSurname.FormattingEnabled = true;
+            this.comboBoxPredictSurname.Location = new System.Drawing.Point(12, 126);
+            this.comboBoxPredictSurname.Name = "comboBoxPredictSurname";
+            this.comboBoxPredictSurname.Size = new System.Drawing.Size(174, 30);
+            this.comboBoxPredictSurname.TabIndex = 35;
+            // 
+            // comboBoxPredictStreet
+            // 
+            this.comboBoxPredictStreet.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBoxPredictStreet.FormattingEnabled = true;
+            this.comboBoxPredictStreet.Location = new System.Drawing.Point(611, 126);
+            this.comboBoxPredictStreet.Name = "comboBoxPredictStreet";
+            this.comboBoxPredictStreet.Size = new System.Drawing.Size(175, 30);
+            this.comboBoxPredictStreet.TabIndex = 36;
+            // 
+            // comboBoxPredictPatron
+            // 
+            this.comboBoxPredictPatron.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBoxPredictPatron.FormattingEnabled = true;
+            this.comboBoxPredictPatron.Location = new System.Drawing.Point(425, 126);
+            this.comboBoxPredictPatron.Name = "comboBoxPredictPatron";
+            this.comboBoxPredictPatron.Size = new System.Drawing.Size(173, 30);
+            this.comboBoxPredictPatron.TabIndex = 37;
+            // 
+            // comboBoxPredictName
+            // 
+            this.comboBoxPredictName.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.comboBoxPredictName.FormattingEnabled = true;
+            this.comboBoxPredictName.Location = new System.Drawing.Point(224, 126);
+            this.comboBoxPredictName.Name = "comboBoxPredictName";
+            this.comboBoxPredictName.Size = new System.Drawing.Size(174, 30);
+            this.comboBoxPredictName.TabIndex = 38;
+            // 
+            // pasteValues
+            // 
+            this.pasteValues.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.pasteValues.Location = new System.Drawing.Point(821, 127);
+            this.pasteValues.Name = "pasteValues";
+            this.pasteValues.Size = new System.Drawing.Size(132, 34);
+            this.pasteValues.TabIndex = 39;
+            this.pasteValues.Text = "Paste values";
+            this.pasteValues.UseVisualStyleBackColor = true;
+            this.pasteValues.Click += new System.EventHandler(this.pasteValues_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1244, 692);
+            this.ClientSize = new System.Drawing.Size(1276, 692);
+            this.Controls.Add(this.pasteValues);
+            this.Controls.Add(this.comboBoxPredictName);
+            this.Controls.Add(this.comboBoxPredictPatron);
+            this.Controls.Add(this.comboBoxPredictStreet);
+            this.Controls.Add(this.comboBoxPredictSurname);
             this.Controls.Add(this.updateMain);
             this.Controls.Add(this.Filter);
             this.Controls.Add(this.label10);
@@ -464,6 +520,11 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button Filter;
         private System.Windows.Forms.Button updateMain;
+        private System.Windows.Forms.ComboBox comboBoxPredictSurname;
+        private System.Windows.Forms.ComboBox comboBoxPredictStreet;
+        private System.Windows.Forms.ComboBox comboBoxPredictPatron;
+        private System.Windows.Forms.ComboBox comboBoxPredictName;
+        private System.Windows.Forms.Button pasteValues;
     }
 }
 

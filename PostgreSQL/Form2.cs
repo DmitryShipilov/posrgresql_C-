@@ -41,7 +41,7 @@ namespace PostgreSQL
 
         public string Item;
         DataTable dt = new DataTable();
-        private void Form2_Load(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e) // shows datagrid depended from cunstructor
         {
             try
             {
@@ -89,7 +89,7 @@ namespace PostgreSQL
         {
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
+        private void buttonUpdate_Click(object sender, EventArgs e) // update parent table
         {
             try
             {

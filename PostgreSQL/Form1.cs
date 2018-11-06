@@ -15,7 +15,7 @@ using PgSql;
 namespace PgSql
 {
     public partial class Form1 : Form
-   {
+    {
 
         List<string> ColumnVals = new List<string>();
         List<string> ColumnIndex = new List<string>();
@@ -25,17 +25,17 @@ namespace PgSql
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e) // load data into comboboxes
         {
             this.comboShow("name");
             this.comboShow("surname");
             this.comboShow("patronymic");
             this.comboShow("street");
-        }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            this.fillPredictInput("name");
+            this.fillPredictInput("surname");
+            this.fillPredictInput("patronymic");
+            this.fillPredictInput("street");
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -43,13 +43,18 @@ namespace PgSql
             Close();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)  // clear all textBoxes
         {
             lastName.Text = "";
             name.Text = "";
             patronymic.Text = "";
             phNumber.Text = "";
             street.Text = "";
+
+            comboBoxPredictName.SelectedIndex    = -1;
+            comboBoxPredictSurname.SelectedIndex = -1;
+            comboBoxPredictStreet.SelectedIndex  = -1;
+            comboBoxPredictPatron.SelectedIndex  = -1;
         }
 
         private void add_Click(object sender, EventArgs e) // fills parents and main table, refreshes cmbxs
@@ -148,7 +153,7 @@ namespace PgSql
 
         }
 
-        private void delete_Click(object sender, EventArgs e) //deletes current row
+        private void delete_Click(object sender, EventArgs e) //deletes current row in main table
         {
             {
 
@@ -185,7 +190,7 @@ namespace PgSql
 
 
 
-        private void button2_Click_1(object sender, EventArgs e) // show form2 from button
+        private void button2_Click_1(object sender, EventArgs e) // shows form2 from button
         {
             if (comboBoxTable.SelectedItem != null)
             {
@@ -198,7 +203,7 @@ namespace PgSql
             }
         }
 
-        private void comboShow(string table_name) // fill combobox
+        private void comboShow(string table_name) // fills combobox
         {
             string connstring = "Server=localhost; Port=5432; User Id=postgres; Password=1415; Database=phonebook;";
             string query = string.Format("select f_val from {0}", table_name);
@@ -246,7 +251,7 @@ namespace PgSql
             connection.Close();
         }
 
-        private void comboShow(string table_name, string refresh) // refresh cobmobox
+        private void comboShow(string table_name, string refresh) // refrshes cobmobox
         {
             string connstring = "Server=localhost; Port=5432; User Id=postgres; Password=1415; Database=phonebook;";
             string last_element = string.Format("select max(f_id) from {0}", table_name);
@@ -300,7 +305,7 @@ namespace PgSql
 
         }
 
-        private void Filter_Click(object sender, EventArgs e)
+        private void Filter_Click(object sender, EventArgs e)   // filter by params
         {
             dt.Clear();
             string connstring = "Server=localhost; Port=5432; User Id=postgres; Password=1415; Database=phonebook;";
@@ -344,7 +349,7 @@ namespace PgSql
             connection.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)  // update data in main table
         {
             try
             { 
@@ -485,6 +490,80 @@ namespace PgSql
                 Console.WriteLine(ColumnIndex[i]);
             }
 
+
+        }
+
+        private void comboBoxFilterStreet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillPredictInput(string field) // fills predict comboboxes
+        {
+            string connstring = "Server=localhost; Port=5432; User Id=postgres; Password=1415; Database=phonebook;";
+
+            string query = string.Format("select f_val from {0} ", field);
+
+            NpgsqlConnection connection = new NpgsqlConnection(connstring);
+            connection.Open();
+
+            NpgsqlCommand npgSqlCommand = new NpgsqlCommand(query, connection);
+            NpgsqlDataReader npgSqlDataReader = npgSqlCommand.ExecuteReader();
+
+            while (npgSqlDataReader.Read())
+            {
+                switch(field)
+                {
+                    case "name":
+                        {
+                            comboBoxPredictName.Items.Add(npgSqlDataReader.GetString(0));
+                            break;
+                        }
+                    case "surname":
+                        {
+                            comboBoxPredictSurname.Items.Add(npgSqlDataReader.GetString(0));
+                            break;
+                        }
+                    case "patronymic":
+                        {
+                            comboBoxPredictPatron.Items.Add(npgSqlDataReader.GetString(0));
+                            break;
+                        }
+                    case "street":
+                        {
+                            comboBoxPredictStreet.Items.Add(npgSqlDataReader.GetString(0));
+                            break;
+                        }
+
+                }
+
+            }
+            connection.Close();
+
+
+        }
+
+        private void pasteValues_Click(object sender, EventArgs e)  // pastes predicted values into textboxes
+        {
+            if (comboBoxPredictSurname.SelectedItem != null)
+            {
+                lastName.Text = comboBoxPredictSurname.SelectedItem.ToString();
+            }
+
+            if (comboBoxPredictName.SelectedItem != null)
+            {
+                name.Text = comboBoxPredictName.SelectedItem.ToString();
+            }
+
+            if (comboBoxPredictPatron.SelectedItem != null)
+            {
+                patronymic.Text = comboBoxPredictPatron.SelectedItem.ToString();
+            }
+
+            if (comboBoxPredictStreet.SelectedItem != null)
+            {
+                street.Text = comboBoxPredictStreet.SelectedItem.ToString();
+            }
 
         }
     }
