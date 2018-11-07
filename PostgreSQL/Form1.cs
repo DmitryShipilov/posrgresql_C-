@@ -36,6 +36,8 @@ namespace PgSql
             this.fillPredictInput("surname");
             this.fillPredictInput("patronymic");
             this.fillPredictInput("street");
+
+            dataGridView1.Hide();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -130,6 +132,8 @@ namespace PgSql
                 comboBoxFilterSurname.SelectedItem = null;
                 comboBoxFilterStreet.SelectedItem = null;
                 comboBoxFilterPatr.SelectedItem = null;
+
+                dataGridView1.Show();
             }
             catch (Exception ex)
             {
